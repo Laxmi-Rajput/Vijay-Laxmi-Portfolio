@@ -384,6 +384,15 @@ body { background: linear-gradient(180deg, var(--paper) 0%, #f8f4ee 48%, var(--p
     .nav-links.open { max-height: calc(100dvh - 64px); }
 }
 
+/* Mobile dropdown positioning fix */
+@media (max-width: 800px) {
+    .site-header { isolation: isolate; position: sticky; z-index: 9998; }
+    .navbar { position: relative; z-index: 9998; }
+    .menu-toggle { position: relative; z-index: 10000; }
+    .nav-links { background-color: var(--paper) !important; backdrop-filter: none !important; bottom: auto; height: auto !important; left: 0; max-height: 0; opacity: 0 !important; position: absolute; right: 0; top: 100%; transform: translateY(-8px); z-index: 9999 !important; }
+    .nav-links.open { background-color: var(--paper) !important; max-height: 520px; opacity: 1 !important; transform: translateY(0); }
+}
+
 /* Startup & Leadership */
 .startup-section { background: var(--beige); }
 .startup-layout { align-items: center; display: grid; gap: 90px; grid-template-columns: .85fr 1.15fr; }
